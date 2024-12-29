@@ -8,6 +8,8 @@ directories=(
     "$HOME/.vim/colors"
     "$HOME/.vim/plugged"
 )
+# var für die vimrc Datei
+vimrc = "$HOME/.vimrc"
 
 # Schleife durch die Ordnerliste
 for dir in "${directories[@]}"; do
