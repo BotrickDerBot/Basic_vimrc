@@ -8,10 +8,8 @@ directories=(
     "$HOME/.vim/colors"
     "$HOME/.vim/plugged"
 )
-# var für die vimrc Datei
-vimrc = "$HOME/.vimrc"
 
-# Schleife durch die Ordnerliste
+# Schleife durch die Ordnerliste ob diese bereits existieren, falls nicht werden diese erstellt.
 for dir in "${directories[@]}"; do
     if [ -d "$dir" ]; then
         echo "Der Ordner $dir existiert bereits."
@@ -21,4 +19,11 @@ for dir in "${directories[@]}"; do
     fi
 done
 
+# Überprüfung ob die Datei .vimrc existiert falls nicht, wird diese erstellt.
+if [ -f "$HOME/.vimrc" ]; then
+    echo "Die Datei .vimrc existiert."
+else
+    echo "Die Datei .vimrc wird erstellt."
+    touch .vimrc
+fi
 
